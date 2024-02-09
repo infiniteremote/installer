@@ -247,7 +247,7 @@ pip install --no-cache-dir -r /opt/rustdesk-api-server/requirements.txt
 cd /opt/rustdesk-api-server/
 python manage.py makemigrations
 python manage.py migrate
-python manage.py createsuperuser
+python manage.py securecreatesuperuser
 deactivate
 
 apiconfig="$(
