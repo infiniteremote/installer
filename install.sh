@@ -232,7 +232,7 @@ UNISALT=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 24 | head -n 1)
 secret_config="$(
   cat <<EOF
 SECRET_KEY = "${SECRET_KEY}"
-
+SALT_CRED = "${UNISALT}"
 EOF
 )"
 echo "${secret_config}" >/opt/rustdesk-api-server/rustdesk_server_api/secret_config.py
