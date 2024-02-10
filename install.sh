@@ -220,7 +220,7 @@ sudo chown -R ${usern}:${usern} /opt/rustdesk-api-server/
 
 
 SECRET_KEY=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 80 | head -n 1)
-
+UNISALT=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 24 | head -n 1)
 
 secret_config="$(
   cat <<EOF
@@ -236,6 +236,8 @@ if [ ! -d "/var/log/rustdesk-server-api" ]; then
 fi
 
 sudo chown -R ${usern}:${usern} /var/log/rustdesk-server-api/
+
+sed -i "s|xiaomo|${UNISALT}|g" /opt/rustdesk-api-server/api/views_front.py
 
 cd /opt/rustdesk-api-server/api
 python3 -m venv env
