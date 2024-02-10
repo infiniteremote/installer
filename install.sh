@@ -7,6 +7,13 @@ admintoken=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c16)
 
 ARCH=$(uname -m)
 
+echo -ne "Enter your preferred domain/DNS address: "
+read wanip
+# Check wanip is valid domain
+if ! [[ $wanip =~ ^[a-zA-Z0-9]+([a-zA-Z0-9.-]*[a-zA-Z0-9]+)?$ ]]; then
+    echo -e "Invalid domain/DNS address"
+    exit 1
+fi
 
 # Identify OS
 if [ -f /etc/os-release ]; then
@@ -146,7 +153,7 @@ Description=RustDesk Signal Server
 [Service]
 Type=simple
 LimitNOFILE=1000000
-ExecStart=/usr/bin/hbbs
+ExecStart=/usr/bin/hbbs -r $wanip
 WorkingDirectory=/var/lib/rustdesk-server/
 User=${usern}
 Group=${usern}
@@ -293,14 +300,6 @@ echo "${apiservice}" | sudo tee /etc/systemd/system/rustdesk-api.service >/dev/n
 sudo systemctl daemon-reload
 sudo systemctl enable rustdesk-api
 sudo systemctl start rustdesk-api
-
-echo -ne "Enter your preferred domain/DNS address: "
-read wanip
-# Check wanip is valid domain
-if ! [[ $wanip =~ ^[a-zA-Z0-9]+([a-zA-Z0-9.-]*[a-zA-Z0-9]+)?$ ]]; then
-    echo -e "${RED}Invalid domain/DNS address${NC}"
-    exit 1
-fi
 
 echo "Installing nginx"
 if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
