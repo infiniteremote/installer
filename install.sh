@@ -1,4 +1,5 @@
 5. make status page
+6. make relay control page
 #!/bin/bash
 
 # Get username
