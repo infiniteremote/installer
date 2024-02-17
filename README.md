@@ -25,7 +25,7 @@ wget https://raw.githubusercontent.com/infiniteremote/installer/main/install.sh
 ### Run the Installation Script:
 
 ```
-bash InfiniteRemote_install.sh
+bash install.sh
 ```
 Follow the on-screen instructions to complete the installation. The script will guide you through the configuration process, including setting up required software, firewalls, and system services.
 
