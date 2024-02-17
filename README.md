@@ -19,11 +19,11 @@ Login as Root: Ensure you are logged in as the root user or a user with sufficie
 
 Download the Installation Script:
 
-bash```
+```bash
 wget https://raw.githubusercontent.com/infiniteremote/installer/main/install.sh```
 Run the Installation Script:
 
-bash````
+```bash
 bash InfiniteRemote_install.sh```
 Follow the on-screen instructions to complete the installation. The script will guide you through the configuration process, including setting up required software, firewalls, and system services.
 
