@@ -8,6 +8,15 @@ Please be aware that while we strive to ensure the security and integrity of our
 ### Why Infinite Remote?
 We have started our own project due to the lack of transparency of the RustDesk project and intend on forking and maintaining our own servers and clients, the vulnerabilities in the RustDesk client is too much for business use so we will be working hard on improving the codebase and security.
 
+### Screenshots
+
+Agent Display with searching all fields and clickable IDs to launch directly.
+![image](https://github.com/infiniteremote/installer/assets/156513740/2a7096be-247d-44fd-963e-4b20d4110d85)
+
+Installer Config Page
+![image](https://github.com/infiniteremote/installer/assets/156513740/3729a5f8-75e2-476c-8789-7658220bbc95)
+
+
 ### Requirements
 - A clean installation of Linux we suggest Debian 12 or Ubuntu 22.04.
 - A public IP address.
