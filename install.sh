@@ -229,6 +229,7 @@ secret_config="$(
   cat <<EOF
 SECRET_KEY = "${SECRET_KEY}"
 SALT_CRED = "${UNISALT}"
+CSRF_TRUSTED_ORIGINS = "https://${wanip}"
 EOF
 )"
 echo "${secret_config}" >/opt/rustdesk-api-server/rustdesk_server_api/secret_config.py
