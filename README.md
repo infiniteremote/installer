@@ -41,7 +41,7 @@ Once installed, you can access the InfiniteRemote management interface through y
 Here, you can download isntallers, view status reports, view connected agents and configure service settings.
 
 ### Support and Reporting Issues
-If you encounter any issues during installation or while using the service, please open a discussion.
+If you encounter any issues during installation or while using the service, please open a discussion or [join our discord](https://discord.gg/8AkVusf9).
 
 ### Legal Disclaimer
 The InfiniteRemote software is provided "as is", without warranty of any kind. By installing and using the software, you accept full responsibility for its deployment and security.
