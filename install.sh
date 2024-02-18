@@ -341,7 +341,8 @@ sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rus
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 
-sudo ufw enable && ufw reload
+sudo ufw enable 
+sudo ufw reload
 
 sudo certbot --nginx -d ${wanip}
 
