@@ -9,10 +9,10 @@ Please be aware that while we strive to ensure the security and integrity of our
 We have started our own project due to the lack of transparency of the RustDesk project and intend on forking and maintaining our own servers and clients, the vulnerabilities in the RustDesk client is too much for business use so we will be working hard on improving the codebase and security.
 
 ### Requirements
-A clean installation of Linux we suggest Debian 12 or Ubuntu 22.04.
-A public IP address.
-Open TCP ports 80 (HTTP) and 443 (HTTPS) for external access for the API, open ports 21115-21117 TCP and 21116 UDP for the signal servers and relay servers.
-A Fully Qualified Domain Name (FQDN) pointing to your public IP, e.g., InfiniteRemote.example.com.
+- A clean installation of Linux we suggest Debian 12 or Ubuntu 22.04.
+- A public IP address.
+- Open TCP ports 80 (HTTP) and 443 (HTTPS) for external access for the API, open ports 21115-21117 TCP and 21116 UDP for the signal servers and relay servers.
+- A Fully Qualified Domain Name (FQDN) pointing to your public IP, e.g., InfiniteRemote.example.com.
 
 ## Installation Process
 The installation process involves downloading and running the installation script, which automates the setup of the InfiniteRemote service.
