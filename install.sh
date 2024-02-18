@@ -117,21 +117,18 @@ unzip rustdesk-server-linux-amd64.zip
 sudo mv amd64/hbbr /usr/bin/
 sudo mv amd64/hbbs /usr/bin/
 rm -rf amd64/
-rm -rf rustdesk-server-linux-amd64.zip
 elif [ "${ARCH}" = "armv7l" ] ; then
 wget "https://github.com/rustdesk/rustdesk-server/releases/download/${RDLATEST}/rustdesk-server-linux-armv7.zip"
 unzip rustdesk-server-linux-armv7.zip
 sudo mv armv7/hbbr /usr/bin/
 sudo mv armv7/hbbs /usr/bin/
 rm -rf armv7/
-rm -rf rustdesk-server-linux-armv7.zip
 elif [ "${ARCH}" = "aarch64" ] ; then
 wget "https://github.com/rustdesk/rustdesk-server/releases/download/${RDLATEST}/rustdesk-server-linux-arm64v8.zip"
 unzip rustdesk-server-linux-arm64v8.zip
 sudo mv arm64v8/hbbr /usr/bin/
 sudo mv arm64v8/hbbs /usr/bin/
 rm -rf arm64v8/
-rm -rf rustdesk-server-linux-arm64v8.zip
 fi
 
 sudo chmod +x /usr/bin/hbbs
