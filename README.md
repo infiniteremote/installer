@@ -2,6 +2,8 @@
 
 We are based off of [RustDesk](https://github.com/rustdesk/rustdesk) and [RustDesk-API](https://github.com/kingmo888/rustdesk-api-server)
 
+[Installation Guide](https://github.com/infiniteremote/installer/wiki/Installation)
+
 [Join our discord](https://discord.gg/8AkVusf9)
 
 [Read our Docs](https://github.com/infiniteremote/installer/wiki)
