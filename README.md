@@ -30,6 +30,14 @@ The installation process involves downloading and running the installation scrip
 
 Login as Root: Ensure you are logged in as the root user or a user with sufficient privileges to install software and modify system settings.
 
+### Create User
+
+```
+useradd -m -G sudo -s /bin/bash infinite
+passwd infinite
+su - infinite
+```
+
 ### Download the Installation Script:
 
 ```
