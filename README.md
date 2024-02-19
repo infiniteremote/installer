@@ -8,11 +8,11 @@ We are based off of [RustDesk](https://github.com/rustdesk/rustdesk) and [RustDe
 
 [Read our Docs](https://github.com/infiniteremote/installer/wiki)
 
-### Security Disclaimer
-Please be aware that while we strive to ensure the security and integrity of our software, no system is entirely immune to vulnerabilities. The InfiniteRemote project is in active development, and while we are committed to security, there could be unintentional risks. We recommend exercising caution, particularly with sensitive information. Consider additional security measures such as running the service on a dedicated server, employing a web application firewall, or limiting access to trusted IPs.
-
 ### Why Infinite Remote?
 We have started our own project due to the lack of transparency of the RustDesk project and intend on forking and maintaining our own servers and clients, the vulnerabilities in the RustDesk client is too much for business use so we will be working hard on improving the codebase and security.
+
+### Security Disclaimer
+Please be aware that while we strive to ensure the security and integrity of our software, no system is entirely immune to vulnerabilities. The InfiniteRemote project is in active development, and while we are committed to security, there could be unintentional risks. We recommend exercising caution, particularly with sensitive information. Consider additional security measures such as running the service on a dedicated server, employing a web application firewall, or limiting access to trusted IPs.
 
 ### Screenshots
 
