@@ -49,13 +49,16 @@ Access Control: Review and tighten access controls as necessary. Limit administr
 Using the InfiniteRemote Service
 Once installed, you can access the InfiniteRemote management interface through your web browser by navigating to your FQDN, e.g., https://InfiniteRemote.example.com and using your username and password setup with the script.
 
-Here, you can download isntallers, view status reports, view connected agents and configure service settings.
+Here, you can download installers, view status reports, view connected agents and configure service settings.
 
 ### Support and Reporting Issues
 If you encounter any issues during installation or while using the service, please open a discussion or [join our discord](https://discord.gg/8AkVusf9).
 
 ### Legal Disclaimer
 The InfiniteRemote software is provided "as is", without warranty of any kind. By installing and using the software, you accept full responsibility for its deployment and security.
+
+### Translations
+Please see [here](https://github.com/infiniteremote/installer/discussions/2), we will implement an option for translations shortly
 
 ### Conclusion
 This guide outlines the steps to install and configure the InfiniteRemote service using an automated script. By following these instructions and recommendations, you can ensure a successful setup and secure operation of your service.
