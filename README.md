@@ -2,6 +2,8 @@
 
 [Join our discord](https://discord.gg/8AkVusf9)
 
+[Read our Docs](https://github.com/infiniteremote/installer/wiki)
+
 ### Security Disclaimer
 Please be aware that while we strive to ensure the security and integrity of our software, no system is entirely immune to vulnerabilities. The InfiniteRemote project is in active development, and while we are committed to security, there could be unintentional risks. We recommend exercising caution, particularly with sensitive information. Consider additional security measures such as running the service on a dedicated server, employing a web application firewall, or limiting access to trusted IPs.
 
