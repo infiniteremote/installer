@@ -8,7 +8,8 @@ ARCH=$(uname -m)
 
 # Check for folder /opt/rustdesk-api-server/
 if [ -d "/opt/rustdesk-api-server/" ]; then
-    echo "Please remove /opt/rustdesk-api-server/ using rm -rf /opt/rustdesk-api-server/ and run this script again"
+    echo "Please remove /opt/rustdesk-api-server/"
+    echo "Use rm -rf /opt/rustdesk-api-server/ and run this script again"
     exit
 fi
 
