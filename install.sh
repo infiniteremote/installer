@@ -6,6 +6,12 @@ admintoken=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c16)
 
 ARCH=$(uname -m)
 
+# Check for folder /opt/rustdesk-api-server/
+if [ -d "/opt/rustdesk-api-server/" ]; then
+    echo "Please remove /opt/rustdesk-api-server/ using rm -rf /opt/rustdesk-api-server/ and run this script again"
+    exit
+fi
+
 echo -ne "Enter your preferred domain/DNS address: "
 read wanip
 # Check wanip is valid domain
@@ -333,8 +339,13 @@ EOF
 )"
 echo "${rustdesknginx}" | sudo tee /etc/nginx/sites-available/rustdesk.conf >/dev/null
 
-sudo rm /etc/nginx/sites-available/default
-sudo rm /etc/nginx/sites-enabled/default
+# Check for nginx default files
+if [ "/etc/nginx/sites-available/default" ]; then
+    sudo rm /etc/nginx/sites-available/default
+fi
+if [ "/etc/nginx/sites-enabled/default" ]; then
+    sudo rm /etc/nginx/sites-enabled/default
+fi
 
 sudo ln -s /etc/nginx/sites-available/rustdesk.conf /etc/nginx/sites-enabled/rustdesk.conf
 
