@@ -1,4 +1,6 @@
-# Installation Guide for InfiniteRemote Service via Script 
+# Welcome to InfiniteRemote
+
+We are based off of [RustDesk](https://github.com/rustdesk/rustdesk) and [RustDesk-API](https://github.com/kingmo888/rustdesk-api-server)
 
 [Join our discord](https://discord.gg/8AkVusf9)
 
