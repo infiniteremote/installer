@@ -241,8 +241,6 @@ fi
 
 sudo chown -R ${usern}:${usern} /var/log/rustdesk-server-api/
 
-sed -i "s|xiaomo|${UNISALT}|g" /opt/rustdesk-api-server/api/views_front.py
-
 cd /opt/rustdesk-api-server/api
 python3 -m venv env
 source /opt/rustdesk-api-server/api/env/bin/activate
