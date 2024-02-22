@@ -72,15 +72,19 @@ fi
 
 # Setup prereqs for server
 # Common named prereqs
-PREREQ="curl wget unzip tar git qrencode python3.11-venv"
-PREREQDEB="dnsutils ufw"
+PREREQ="curl wget unzip tar git qrencode"
+PREREQDEB="dnsutils ufw python3.11-venv"
+PREREQUBU="dnsutils ufw python3.10-venv"
 PREREQRPM="bind-utils"
 PREREQARCH="bind"
 
 echo "Installing prerequisites"
-if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
+if [ "${ID}" = "debian" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
     sudo apt-get update
     sudo apt-get install -y ${PREREQ} ${PREREQDEB} # git
+elif [ "$OS" = "Ubuntu" ] || [ "${UPSTREAM_ID}" = "ubuntu" ]; then
+    sudo apt-get update
+    sudo apt-get install -y ${PREREQ} ${PREREQUBU} # git
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "${OS}" = "Almalinux" ] || [ "${UPSTREAM_ID}" = "Rocky*" ] ; then
 # openSUSE 15.4 fails to run the relay service and hangs waiting for it
 # Needs more work before it can be enabled
