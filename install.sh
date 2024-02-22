@@ -13,6 +13,12 @@ if [ -d "/opt/rustdesk-api-server/" ]; then
     exit
 fi
 
+# Check the installed Python version
+PYTHON_VERSION=$(python3 --version 2>&1 | awk '{print $2}')
+
+# Extract major and minor version (e.g., 3.8 from Python 3.8.5)
+PYTHON_MAJOR_MINOR=$(echo $PYTHON_VERSION | cut -d. -f1,2)
+
 echo -ne "Enter your preferred domain/DNS address: "
 read wanip
 # Check wanip is valid domain
@@ -72,19 +78,15 @@ fi
 
 # Setup prereqs for server
 # Common named prereqs
-PREREQ="curl wget unzip tar git qrencode"
-PREREQDEB="dnsutils ufw python3.11-venv"
-PREREQUBU="dnsutils ufw python3.10-venv"
+PREREQ="curl wget unzip tar git qrencode python$PYTHON_MAJOR_MINOR-venv"
+PREREQDEB="dnsutils ufw "
 PREREQRPM="bind-utils"
 PREREQARCH="bind"
 
 echo "Installing prerequisites"
-if [ "${ID}" = "debian" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "debian" ]; then
-    sudo apt-get update
+if [ "${ID}" = "debian" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "Debian" ] || [ "${UPSTREAM_ID}" = "debian" ] || [ "${UPSTREAM_ID}" = "ubuntu" ]; then
+    sudo apt update -qq
     sudo apt-get install -y ${PREREQ} ${PREREQDEB} # git
-elif [ "$OS" = "Ubuntu" ] || [ "${UPSTREAM_ID}" = "ubuntu" ]; then
-    sudo apt-get update
-    sudo apt-get install -y ${PREREQ} ${PREREQUBU} # git
 elif [ "$OS" = "CentOS" ] || [ "$OS" = "RedHat" ] || [ "${UPSTREAM_ID}" = "rhel" ] || [ "${OS}" = "Almalinux" ] || [ "${UPSTREAM_ID}" = "Rocky*" ] ; then
 # openSUSE 15.4 fails to run the relay service and hangs waiting for it
 # Needs more work before it can be enabled
