@@ -4,7 +4,7 @@ We are based off of [RustDesk](https://github.com/rustdesk/rustdesk) and [RustDe
 
 [Installation Guide](https://github.com/infiniteremote/installer/wiki/Installation)
 
-[Join our discord](https://discord.gg/8AkVusf9)
+[Join our discord](https://discord.gg/4yv6aGySvP)
 
 [Read our Docs](https://github.com/infiniteremote/installer/wiki)
 
