@@ -1,0 +1,41 @@
+services:
+    hbbs:
+        container_name: rustdesk_hbbs
+        ports:
+            - 21115:21115
+            - 21116:21116
+            - 21116:21116/udp
+            - 21118:21118
+        image: rustdesk/rustdesk-server:latest
+        command: hbbs -r <YOUR SERVER HERE>:21117
+        volumes:
+            - ./data:/root
+        depends_on:
+            - hbbr
+        restart: unless-stopped
+    
+    hbbr:
+        container_name: rustdesk_hbbr
+        ports:
+            - 21117:21117
+            - 21119:21119
+        image: rustdesk/rustdesk-server:latest
+        command: hbbr
+        volumes:
+            - ./data:/root
+        restart: unless-stopped
+
+    rustdesk:
+        container_name: rustdesk_api
+        build: ./build/
+        environment:
+            URL: <YOUR SERVER HERE>
+            SUPERUSER_USERNAME: <DEFAULT ADMIN USERNAME>
+            SUPERUSER_PASSWORD: <DEFAULT ADMIN PASSWORD>
+        volumes:
+            - ./db:/opt/rustdesk-api-server/db
+            - ./data:/data
+            - ./apiconfig.py:/opt/rustdesk-api-server/rustdesk_server_api/secret_config.py
+        depends_on:
+            - hbbs
+        restart: unless-stopped
