@@ -39,3 +39,5 @@ services:
         depends_on:
             - hbbs
         restart: unless-stopped
+        ports:
+            - 8000:8000
