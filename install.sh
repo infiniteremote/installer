@@ -162,7 +162,7 @@ Description=RustDesk Signal Server
 [Service]
 Type=simple
 LimitNOFILE=1000000
-ExecStart=/usr/bin/hbbs -r $wanip -k _
+ExecStart=/usr/bin/hbbs -r $wanip
 WorkingDirectory=/var/lib/rustdesk-server/
 Environment=ALWAYS_USE_RELAY=Y
 User=${usern}
@@ -188,7 +188,7 @@ Description=RustDesk Relay Server
 [Service]
 Type=simple
 LimitNOFILE=1000000
-ExecStart=/usr/bin/hbbr -k _
+ExecStart=/usr/bin/hbbr
 WorkingDirectory=/var/lib/rustdesk-server/
 User=${usern}
 Group=${usern}
