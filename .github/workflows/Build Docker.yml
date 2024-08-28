@@ -28,7 +28,7 @@ jobs:
         context: ./build
         file: ./build/Dockerfile
         push: true
-        tags: ${{ secrets.REGISTRY_URL }}/rustdesk-api-server:latest
+        tags: registry2.robiche.fr/rustdesk-api-server:latest
 
     - name: Docker Logout
       run: docker logout ${{ secrets.REGISTRY_URL }}
