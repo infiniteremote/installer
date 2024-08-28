@@ -22,7 +22,7 @@ jobs:
     - name: Log in to Private Registry
       uses: docker/login-action@v1
       with:
-        registry: registry.robiche.fr:443
+        registry: registrydocker.robiche.fr:443
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
@@ -32,7 +32,7 @@ jobs:
         context: ./build
         file: ./build/Dockerfile
         push: true
-        tags: registry.robiche.fr:443/rustdesk-api-server:latest
+        tags: registrydocker.robiche.fr:443/rustdesk-api-server:latest
 
     - name: Docker Logout
-      run: docker logout registry.robiche.fr:443
+      run: docker logout registrydocker.robiche.fr:443
