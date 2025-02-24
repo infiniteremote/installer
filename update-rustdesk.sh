@@ -108,7 +108,7 @@ echo -e "${BLUE}Update process finished.${NC}"
 
 echo " "
 echo -e "${RED}###########################${NC}"
-echo -e "${RED}# !!! IMPORANT NOTICE !!! #${NC}"
+echo -e "${RED}# !!! IMPORTANT NOTICE !!! #${NC}"
 echo -e "${RED}###########################${NC}"
 echo " "
 echo -e "${BLUE}This update script ${RED}DOES NOT update the installer scripts and the rustdesk-api-server!${NC}"
