@@ -105,3 +105,12 @@ fi
 
 echo " "
 echo -e "${BLUE}Update process finished.${NC}"
+
+echo " "
+echo -e "${RED}############################${NC}"
+echo -e "${RED}# !!! IMPORTANT NOTICE !!! #${NC}"
+echo -e "${RED}############################${NC}"
+echo " "
+echo -e "${BLUE}This update script ${RED}DOES NOT update the installer scripts and the rustdesk-api-server!${NC}"
+echo " "
+echo -e "${BLUE}You have to ${RED}manually${BLUE} check the corresponding repository (${NC}https://github.com/infiniteremote/rustdesk-api-server${BLUE}) and update the scripts in ${NC}/opt/rustdesk-api-server/static/configs${BLUE} accordingly (${NC}https://github.com/infiniteremote/rustdesk-api-server/tree/master/static/configs${BLUE}) to keep them up to date.${NC}"
