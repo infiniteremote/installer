@@ -8,6 +8,8 @@ We are based off of [RustDesk](https://github.com/rustdesk/rustdesk) and [RustDe
 
 [Read our Docs](https://github.com/infiniteremote/installer/wiki)
 
+[Custom Client Generator by Bryan Gerlach](https://github.com/bryangerlach/rdgen?tab=readme-ov-file)
+
 ### Why Infinite Remote?
 We have started our own project due to the lack of transparency of the RustDesk project and intend on forking and maintaining our own servers and clients, the vulnerabilities in the RustDesk client is too much for business use so we will be working hard on improving the codebase and security.
 
