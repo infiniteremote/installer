@@ -19,7 +19,7 @@
 # Filename         : update-rustdesk.sh
 # Created at       : 2024-11-09
 # Last changed at  : 2025-04-22
-# Version          : 1.2.0
+# Version          : 1.2.1
 # Description      : Interactive updater for RustDesk components
 #                    written for the RustDesk fork 'Infinite Remote'
 #
@@ -28,7 +28,7 @@
 #                    before the update of RustDesk components (and the
 #                    custom client scripts) is being performed
 
-VERSION=1.2.0
+VERSION=1.2.1
 
 RED='\e[31m'
 BLUE='\e[36m'
@@ -193,6 +193,28 @@ step_2_update_client () {
         echo " "
         echo -e "${BLUE}Setting version string for Windows Powershell client config (install.ps1)...${NC}"
         sed -i "s@^\$version = \".*\"@\$version = \"${RDCLATEST}\"@g" /opt/rustdesk-api-server/static/configs/install.ps1
+
+        echo " "
+        echo -e "${BLUE}Downloading new Windows client with config string in filename (rustdesk-licensed-XXX.exe)...${NC}"
+        RDCONFIGSTRING=$(find /opt/rustdesk-api-server/static/configs -iname "rustdesk-licensed-*" | head -n 1 | cut -d "-" -f 5 | cut -d "." -f 1)
+        FILEOWNER=$(stat -c "%U:%G" "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe")
+
+        # Check if length of config string is not empty
+        if ! [ "${RDCONFIGSTRING}" = "" ]; then
+                # Remove old file if it exists
+                rm -f "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe.old"
+
+                # Create backup
+                mv "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe" "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe.old"
+
+                # Get new version from GitHub
+                wget -q https://github.com/rustdesk/rustdesk/releases/download/"${RDCLATEST}"/rustdesk-"${RDCLATEST}"-x86_64.exe -O "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe"
+                # Change file owner to match the backup
+                chown "${FILEOWNER}" "/opt/rustdesk-api-server/static/configs/rustdesk-licensed-${RDCONFIGSTRING}.exe"
+        else
+                echo " "
+                echo -e "${RED}There has been some issue while replacing the new Windows client with config string in filename. Please investigate.${NC}"
+        fi
 
         echo " "
         echo -e "${GREEN}Update process for RustDesk client config version strings finished.${NC}"
